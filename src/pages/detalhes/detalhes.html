@@ -1,0 +1,25 @@
+<ion-header>
+        <ion-navbar>
+          <button menuToggle *ngIf="!item">
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-title>{{item.heroi}}</ion-title>
+        </ion-navbar>
+      </ion-header>
+      
+      <ion-content>
+            <ion-card>
+                    <img src="assets/imgs/{{ item.imagem }}">
+                    <ion-card-content>
+                      <ion-card-title>
+                       {{item.heroi}}
+                        </ion-card-title>
+                      <p>
+                       {{ item.resumo}}
+                      </p>
+                      <button ion-button outline item-end icon-left (click)="alertaMaisInfo()">
+                        Mais Informações
+                      </button>
+                      </ion-card-content>
+                  </ion-card>
+      </ion-content>

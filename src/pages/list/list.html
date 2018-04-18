@@ -3,12 +3,19 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Loja HQ</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
     <img width="100%" src="assets/imgs/capa.jpg">
+    <ion-searchbar
+      [(ngModel)]="searchTerm"
+      [showCancelButton]="shouldShowCancel"
+      (ionInput)="buscarItens()"
+      (ionCancel)="onCancel($event)"
+      placeholder="Busque">
+    </ion-searchbar>
     <ion-list>
         <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
           <ion-avatar item-start>

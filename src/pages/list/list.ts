@@ -1,6 +1,7 @@
+import { DetalhesPage } from './../detalhes/detalhes';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { DetalhesPage } from '../detalhes/detalhes';
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'
@@ -10,14 +11,23 @@ export class ListPage {
   icons: string[];
   items: Array<SuperHeroi>;
   listaHeroi = new ListaHeroi();
+  searchTerm :string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.items = this.listaHeroi.lista;
   }
+  buscarItens() {
+    this.items = this.listaHeroi.lista;
+    this.items = this.items.filter((item) => {
+      return item.heroi.toLowerCase().indexOf(this.searchTerm.toLowerCase()) > -1;
+  });
+}
+
+
 
   itemTapped(event, item) {
     // That's right, we're pushing to ourselves!
-    this.navCtrl.push(ListPage, {
+    this.navCtrl.push(DetalhesPage, {
       item: item
     });
   }
