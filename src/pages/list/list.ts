@@ -1,7 +1,7 @@
 import { DetalhesPage } from './../detalhes/detalhes';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { DetalhesPage } from '../detalhes/detalhes';
+
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'

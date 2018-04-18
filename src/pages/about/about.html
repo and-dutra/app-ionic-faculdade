@@ -3,16 +3,27 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Lixo</ion-title>
+    <ion-title>Sobre</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu walksjdalskjdaksld</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
-</ion-content>
+    <h3>Loja HQ</h3>
+   
+     <p>
+       Loja HQ - Desenvolvido por André D. Oliveira
+     </p>
+   
+     <ion-card>
+        <ion-card-content>
+          <ion-card-title>
+           Localização
+            </ion-card-title>
+          
+          <button ion-button outline item-end icon-left (click)="obterLocalizacao()">
+            Obter Localização
+          </button>
+        </ion-card-content>
+      </ion-card>
+     
+   </ion-content>

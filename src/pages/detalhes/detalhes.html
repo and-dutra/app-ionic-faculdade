@@ -1,25 +1,54 @@
 <ion-header>
-        <ion-navbar>
-          <button menuToggle *ngIf="!item">
-            <ion-icon name="menu"></ion-icon>
+  <ion-navbar>
+    <button menuToggle *ngIf="!item">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{item.heroi}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+        <img [src]="imageSrc"/>
+    <ion-card-content>
+      <ion-card-title>
+        {{item.heroi}}
+      </ion-card-title>
+      <p>
+        {{ item.resumo}}
+      </p>
+      <button ion-button outline item-end icon-left (click)="alertaMaisInfo()">
+        Mais Informações
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        Buscar Outras Informações
+      </ion-card-title>
+      <button ion-item (click)="clicandoItem('http://google.com/search?source=hp&q'+item.heroi)">
+        <ion-icon name="logo-google" item-start></ion-icon>
+        Google
+      </button>
+      <button ion-item (click)="clicandoItem('https://pt.wikipedia.org/wiki/'+item.heroi)">
+        <ion-icon name="logo-chrome" item-start></ion-icon>
+        Wikipédia
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+        <ion-card-content>
+          <ion-card-title>
+           Alterar Foto
+            </ion-card-title>
+          <button ion-item (click)="fotografar()">
+            <ion-icon name="camera" item-start></ion-icon>
+            Tire outra foto
           </button>
-          <ion-title>{{item.heroi}}</ion-title>
-        </ion-navbar>
-      </ion-header>
+          
+        </ion-card-content>
+      </ion-card> 
       
-      <ion-content>
-            <ion-card>
-                    <img src="assets/imgs/{{ item.imagem }}">
-                    <ion-card-content>
-                      <ion-card-title>
-                       {{item.heroi}}
-                        </ion-card-title>
-                      <p>
-                       {{ item.resumo}}
-                      </p>
-                      <button ion-button outline item-end icon-left (click)="alertaMaisInfo()">
-                        Mais Informações
-                      </button>
-                      </ion-card-content>
-                  </ion-card>
-      </ion-content>
+      
+</ion-content>
